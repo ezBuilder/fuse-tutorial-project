@@ -1,0 +1,147 @@
+<!-- <App Theme="Basic" ClearColor="#eeeeeeff">
+	<DockPanel>
+		<StatusBarBackground DockPanel.Dock="Top"/>
+
+
+		<JavaScript>
+			var Observable=require('FuseJS/Observable'); 
+			var myVariable=Observable("UPPER lower case");
+
+			// var lowercase=myVariable.map(function(x){
+
+			// 	return x.toLowerCase();
+
+			// })
+			// var uppercase=myVariable.map(function(x){
+
+			// 	return x.toUpperCase();
+
+			// })
+			var isJake= myVariable.map(function(x){
+
+				return x=="Jake";
+			})
+			function button_clicked(){
+
+
+				myVariable.value="some OTHER";
+				debug_log(myVariable);
+
+			}
+			module.exports={
+				myVariable : myVariable,
+
+
+				isJake:isJake,
+
+				button_clicked:button_clicked
+
+				// lowercase:lowercase,
+				// uppercase:uppercase
+
+
+
+			};
+		</JavaScript>
+
+
+		<StackPanel>
+			<TextInput Value="{myVariable}"/>
+
+			<Text Value="{isJake}"/>
+			<Switch Value="{isJake}"/>
+			<Button Clicked="{button_clicked}" Text="Change Text"/>
+
+		</StackPanel>
+
+
+	</DockPanel>
+
+
+
+</App> -->
+
+
+<App Theme="Basic" ClearColor="#eeeeeeff">
+	<DockPanel>
+		<StatusBarBackground DockPanel.Dock="Top"/>
+
+		<JavaScript>
+			var Observable=require('FuseJS/Observable');
+
+			function Person(name,age){
+
+				this.name=name;
+				this.age=age;
+
+			}
+
+
+
+			var myVariable=Observable(
+				new Person("Jake",25),
+				new Person("Julie",32),
+				new Person("Greg",50)
+
+
+
+				);
+			var name =Observable("");
+			var age=Observable("");
+			var uppercase=
+				myVariable
+				.where(function(x){
+
+					return x.age>30;
+
+				})
+				.map(function(x){
+
+					return new Person(x.name.toUpperCase(), x.age);
+
+
+			});
+
+			function submit(){
+
+				var person =new Person(name.value,age.value);
+				myVariable.add(person);
+			}
+			function clear(){
+
+				myVariable.clear();
+
+			}
+
+			module.exports={
+
+
+				myVariable:myVariable,
+				uppercase:uppercase,
+				name:name,
+				age:age,
+				submit:submit,
+				clear:clear
+			};
+		</JavaScript>
+
+
+
+		<StackPanel>
+			<StackPanel>
+				<Button Clicked="{clear}" Text="Clear"/>
+				<TextInput Value="{name}"/>
+				<TextInput Value="{age}"/>
+				<Button Clicked="{submit}" Text="Submit"/>
+			</StackPanel>
+
+			<Each Items="{uppercase}">
+				<Text Value="{name}" />
+
+				<Text Value="{age}" />
+			</Each>
+
+		</StackPanel>
+	</DockPanel>
+
+</App>

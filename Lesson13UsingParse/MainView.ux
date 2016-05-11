@@ -1,0 +1,97 @@
+<App Theme="Basic">
+	<DockPanel>
+
+		<JavaScript File="parse-1.6.14.js" ux:Global="Parse" />
+		<JavaScript File="api-keys.js" ux:Global="ApiKeys" />
+
+		<JavaScript>
+			var Observable=require("FuseJS/Observable");
+			var Parse=require("Parse").Parse;
+			var ApiKeys=require("ApiKeys");
+
+			var Tag=Parse.Object.extend("Tag");
+			var tags =Observable("");
+			var currentText=Observable("");
+
+			var updateInterval=500;
+
+			Parse.initialize(ApiKeys.appId, ApiKeys.jsKey);
+			Parse.serverURL="https://parseapi.back4app.com/"
+
+			function updateTags(){
+				new Parse.Query("Tag").find()
+				.then(function(serverTags){
+					debug_log("update successfullly"+JSON.stringify(serverTags));
+
+					for(var i=tags.length; i<serverTags.length; i++){
+
+
+						tags.add(serverTags[i].get("text"));
+					}
+
+				}, function(error){
+
+					debug_log("cannot update"+error);
+				});
+
+				setTimeout(updateTags, updateInterval);
+
+			}
+			
+
+			function submit(){
+
+				new Tag().save({
+					text: currentText.value
+				}).then(function(tag){
+
+					debug_log("tag saved");
+
+				}, function(error){
+					debug_log("could not save tag"+error);
+				});
+
+				//tags.add(currentText.value);
+				currentText.value="";
+			}
+
+			updateTags();
+
+			module.exports={
+				tags:tags,
+				currentText:currentText,
+				submit:submit
+
+			};
+		</JavaScript>
+
+		<StatusBarBackground Dock="Top"/>
+		<BottomBarBackground Dock="Bottom"/>
+		<Text Dock="Top" FontSize="80" TextColor="Red" Alignment="TopCenter" 
+			Margin="0,50,0,50">
+			tag
+		</Text>
+
+
+		<ScrollView ClipToBounds="true">
+			<StackPanel>
+				<Each Items="{tags}">
+					<Text Value="{}" TextWrapping="Wrap" Margin="10" TextAlignment="Center" />
+				</Each>
+
+			</StackPanel>
+
+		</ScrollView>
+
+
+		<StackPanel Dock="Bottom" Margin="0,50,0,0">
+			
+
+			<Button Text="Submit" Clicked="{submit}" />
+			<TextInput Value="{currentText}" />
+		</StackPanel>
+
+
+	</DockPanel>
+</App>
+
