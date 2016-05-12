@@ -1,0 +1,11 @@
+<App Theme="Basic">
+	<DockPanel>
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom"/>
+
+		<JavaScript File="Main.js" />
+
+		<ux:Include File="Main.ux" />
+	</DockPanel>
+</App>
+

@@ -1,4 +1,4 @@
-<App Theme="NativeWithFallback" >
+<App Theme="NativeWithFallback"  Background="#fff">
 	<DockPanel>
 		<StatusBarBackground Dock="Top"/>
 		<BottomBarBackground Dock="Bottom" />

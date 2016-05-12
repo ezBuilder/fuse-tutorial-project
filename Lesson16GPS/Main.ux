@@ -1,0 +1,12 @@
+		<StackPanel>
+			<Text Value="Immediate Location:" />
+			<Text Value="{immediateLocation}" />
+			<Text Value="Time Out Location:" />
+			<Text Value="{timeoutLocation}" />
+
+			<Button Text="Start Listen" Clicked="{startContinuousListener}" />
+			<Button Text="Stop Listen" Clicked="{stopContinuousListener}" />
+			<Text Value="Continuous Location:" />
+			<Text Value="{conninuousLocation}" />
+
+		</StackPanel>
