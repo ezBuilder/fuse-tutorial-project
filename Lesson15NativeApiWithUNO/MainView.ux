@@ -1,0 +1,42 @@
+<App Theme="Basic">
+	<DockPanel>
+		<StatusBarBackground Dock="Top"/>
+		<BottomBarBackground Dock="Bottom" />
+
+		<SystemSounds ux:Global="SystemSounds"/>
+		<JavaScript>
+			var Observable=require("FuseJS/Observable");
+			var SystemSounds=require("SystemSounds");
+
+			function click(){
+
+				console.log("button was pressed");	
+				SystemSounds.playNotification();
+			}
+
+			module.exports={
+
+				click:click
+			};
+			
+		</JavaScript>
+
+
+		<StackPanel>
+			<Button Text="Press Me" Clicked="{click}" />
+
+		</StackPanel>
+
+
+
+
+
+
+
+	</DockPanel>
+
+
+
+
+</App>
+

@@ -4,17 +4,18 @@
 		<BottomBarBackground Dock="Bottom" />
 
 		<JavaScript File="Main.js"/>
-
+		<Panel>
 		<StackPanel>
-
+			
 			<Slider Value="{slideValue}"/>
 			<Slider Value="{slideValue}"/>
 			<Button Text="Reset" Clicked="{reset}"/>
 
 			<Rectangle Height="100" CornerRadius="10" Fill="#f00" />
+			
 		</StackPanel>
 
-
+		</Panel>
 
 	</DockPanel>
 
