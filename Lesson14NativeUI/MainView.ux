@@ -1,0 +1,23 @@
+<App Theme="NativeWithFallback" >
+	<DockPanel>
+		<StatusBarBackground Dock="Top"/>
+		<BottomBarBackground Dock="Bottom" />
+
+		<JavaScript File="Main.js"/>
+
+		<StackPanel>
+
+			<Slider Value="{slideValue}"/>
+			<Slider Value="{slideValue}"/>
+			<Button Text="Reset" Clicked="{reset}"/>
+
+			<Rectangle Height="100" CornerRadius="10" Fill="#f00" />
+		</StackPanel>
+
+
+
+	</DockPanel>
+
+
+</App>
+
