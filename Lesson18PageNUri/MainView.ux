@@ -1,0 +1,63 @@
+<App Theme="Basic">
+	<DockPanel>
+		<Style>
+
+			<Text TextColor="#fff" FontSize="40" />
+		</Style>
+
+		<StatusBarBackground Dock="Top"/>
+		<BottomBarBackground Dock="Bottom" />
+
+		<JavaScript>
+			var Observable=require("FuseJS/Observable");
+			var InterApp=require("FuseJS/InterApp");
+
+			InterApp.onReceivedUri=function(uri){
+
+				debug_log("Uri received: "+uri);
+			};
+			var currentPage=Observable("page1");
+
+
+			function goPage1() {
+				currentPage.value="page1";
+				debug_log("arrive at page1");
+			}
+
+			function goPage2() {
+				currentPage.value="page2";
+				debug_log("arrive at page2");
+			}
+			module.exports={
+				currentPage:currentPage,
+				goPage1:goPage1,
+				goPage2:goPage2
+			};
+
+		</JavaScript>
+
+		<PageControl Active="{currentPage}" >
+
+			<Page ux:Name="page1">
+				<Rectangle Layer="Background" Fill="#6fa5fb" />
+
+				<StackPanel Alignment="Center">
+					<Text>Page1</Text>
+					<Button Text="go to page 2" Clicked="{goPage2}" />
+				</StackPanel>
+			</Page>
+
+			<Page ux:Name="page2">
+				<Rectangle Layer="Background" Fill="#b1657a" />
+
+				<StackPanel Alignment="Center">
+					<Text>Page2</Text>
+					<Button Text="go to page 1" Clicked="{goPage1}" />
+				</StackPanel>
+			</Page>
+		</PageControl>
+
+
+	</DockPanel>
+
+</App>
