@@ -11,21 +11,28 @@
 		<JavaScript>
 			var Observable=require("FuseJS/Observable");
 			var InterApp=require("FuseJS/InterApp");
-
+			var currentPage=Observable("page1");
 			InterApp.onReceivedUri=function(uri){
 
 				debug_log("Uri received: "+uri);
+
+				currentPage.value=
+				uri.replace("fuse-uri-launching://", "")
 			};
-			var currentPage=Observable("page1");
+			
 
 
 			function goPage1() {
-				currentPage.value="page1";
+				//currentPage.value="page1";
+				InterApp.launchUri("fuse-uri-launching://page1");
+				//and app do not relaunch, just open the page
+
 				debug_log("arrive at page1");
 			}
 
 			function goPage2() {
-				currentPage.value="page2";
+				//currentPage.value="page2";
+				InterApp.launchUri("fuse-uri-launching://page2");
 				debug_log("arrive at page2");
 			}
 			module.exports={
