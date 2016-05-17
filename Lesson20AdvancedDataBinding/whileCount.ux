@@ -1,0 +1,31 @@
+<DockPanel>
+	<JavaScript>
+		var friends=[
+
+			"Luke",
+			"John",
+			"Amy"
+
+		];
+
+		module.exports={
+			friends:friends
+		};
+
+	</JavaScript>
+
+	<StackPanel>
+		<WhileEmpty Items="{friends}" >
+			<Text Value="0 friends :("/>
+		</WhileEmpty>
+
+		<WhileCount Items="{friends}" EqualTo="3">
+			<Text Value="3 friends" />
+		</WhileCount>
+
+		<WhileCount Items="{friends}" EqualTo="5" >
+			<Text Value="5 friends!" />
+		</WhileCount>
+
+	</StackPanel>
+</DockPanel>

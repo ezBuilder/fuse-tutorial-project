@@ -1,0 +1,46 @@
+<DockPanel>
+	<JavaScript>
+		var Observable=require("FuseJS/Observable");
+
+		var items=Observable(
+				{value: "a"},
+				{value: "b"},
+				{value: 21}
+
+
+			);
+
+		module.exports={
+			items:items,
+			  clicked: function(e) {
+			     e.index; // returns index of button clicked
+			 	debug_log(e.index);
+
+			  }
+
+		};
+
+	</JavaScript>
+
+	<StackPanel>
+		<Each Items="{items}" >
+			<DockPanel >
+				<Text Dock="Top" Value="{clicked}">  </Text>
+				<Button Text="Click Me" Clicked="{clicked}" />
+				<Match Value="{value}">
+					<Case String="a">
+						<Button Text="it is a" />
+					</Case>
+					<Case Number="21" >
+						<Text Value="is a number 21" />
+					</Case>
+				</Match>
+			</DockPanel>
+		</Each>
+
+	</StackPanel>
+
+
+
+
+</DockPanel>

@@ -1,0 +1,42 @@
+	<DockPanel>
+		<StatusBarBackground Dock="Top"/>
+		<BottomBarBackground Dock="Bottom" />
+
+		<JavaScript>
+			var superNestedObject={
+				here:{
+					is:{
+						a:{
+							nested:{
+								object:{
+									message1:"hello",
+									message2:"world",
+									message3:"lesson 20"
+								}
+							}
+						}
+					}
+				}
+			};
+
+			module.exports={
+				superNestedObject:superNestedObject
+			}
+
+
+		</JavaScript>
+
+		<StackPanel>
+
+			<Text Value="{superNestedObject.here.is.a.nested.object.message1}" />
+
+
+			<Select Data="{superNestedObject.here.is.a.nested.object}">
+				<Text Value="{message2}"/>
+				<Text Value="{message3}"/>
+
+			</Select>
+
+		</StackPanel>
+
+	</DockPanel>
