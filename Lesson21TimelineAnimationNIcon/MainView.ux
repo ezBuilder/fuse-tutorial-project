@@ -1,0 +1,43 @@
+<App Theme="Basic">
+	<PageControl>
+		<iOS.StatusBarConfig Style="Light" />
+
+		<Page Background="#EC49BA" >
+			<Text FontSize="20" TextColor="#fff" Alignment="Center" >Swipe Left </Text>
+		</Page>
+
+		<Page>
+			<Panel Background="#6334A4" >
+				<Panel ux:Class="Icon" Width="80" Height="80">
+					<Image Source="{Resource iconFile}" Width="60%" Height="60%" />
+					<Circle Fill="#6444A4" >
+						<Stroke Brush="#fff" Width="3"/>
+					</Circle>
+				</Panel>
+
+				<Icon ux:Class="Payment" >
+					<FileImageSource File="Icons/payment.png" ux:Key="iconFile" />
+				</Icon>
+
+
+				<Viewbox Alignment="Center">
+					<Payment ux:Name="pay"/>
+				</Viewbox>
+			</Panel>
+
+			<WhileActive>
+				<Change timeline.TargetProgress="1" />
+			</WhileActive>
+
+
+			<Timeline ux:Name="timeline">
+				<Move Target="pay" Y="-2" Duration="1" Delay="1"  RelativeTo="Size" />
+				<Change pay.Opacity="0.2" Duration="1"/>
+			</Timeline>
+		</Page>
+
+
+	</PageControl>
+
+</App>
+
