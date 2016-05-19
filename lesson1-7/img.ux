@@ -1,0 +1,35 @@
+<!-- uniform uniformtoFill fill pixel/point precise for stretch mode -->
+<DockPanel>
+	<StatusBarBackground Dock="Top"/>
+	<StatusBarBackground Dock="Bottom"/>
+
+	
+	<Image Url="https://docs.unity3d.com/uploads/Main/PlayerSetiOSSplash.png"/>
+	<Image File="Assets/tv.png"  StretchMode="Uniform" ContentAlignment="Left"/>
+	 
+
+	<Image>
+
+		<FileImageSource File="Assets/tv.png" />
+	</Image> 
+
+	 <FileImageSource File="Assets/tv.png" ux:Global="testPattern"/>
+	 <StackPanel>
+	 	<Image Source="testPattern"/>
+		<Image Source="testPattern"/>
+
+	 </StackPanel >
+
+
+
+	 <Image Width="256" Height="128">
+	 	<MultiDensityImageSource>
+	 		<FileImageSource File="Assets/tv.png" Density="1"/>
+	 		<FileImageSource File="Assets/tv.png"  Density="2"/>
+	 	</MultiDensityImageSource>
+
+
+	 </Image>
+
+	<Button/>
+</DockPanel>

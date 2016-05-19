@@ -1,0 +1,23 @@
+<DockPanel>
+
+	<StatusBarBackground Dock="Top"/>
+
+	<StackPanel Orientation="Horizontal" Alignment="Center">
+		
+		<Rectangle  Width="100" Height="100" Fill="#000" CornerRadius="10">
+			<WhileHovering>
+				<Scale Target="GrayRectangle" Factor="1.5" Duration=".25" Easing="BounceOut"
+					EasingBack="BounceIn" DurationBack="1"
+					/> 
+				<Rotate Degrees="45" Duration=".2"/>
+				<Move X="50" Y="-20" />
+			</WhileHovering>
+		</Rectangle>
+
+		<Rectangle ux:Name="GrayRectangle" Width="100" Height="100" Fill="#ccc" 
+			CornerRadius="10" Margin="10,0,0,0">
+
+
+		</Rectangle>
+	</StackPanel>
+</DockPanel> 

@@ -1,0 +1,7 @@
+
+<!--4  layout2 -->
+	<StackPanel Alignment="VerticalCenter" Margin="40,0,40,0">
+		<TextInput Value="UserName" />
+		<TextInput IsPassword="true" />
+		<Button Text="Submit" Alignment="Center" Margin="0, 20, 0, 0" Padding="40,20,40,20"></Button>
+	</StackPanel>

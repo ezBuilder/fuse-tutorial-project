@@ -1,0 +1,13 @@
+
+<!-- 3 layout1 -->
+<Panel>
+	<Rectangle Fill="#000" Alignment="TopLeft" Margin="20" Width="100" Height="100"/>
+	<Button Width="100" Height="100"/>
+	<StackPanel Alignment="VerticalCenter" Margin="40,0,40,0">
+		<Button Text="a" Padding="30"/>
+		<Button Text="b" />
+		<Button Text="a" Width="100px" Height="100%" Alignment="Right"/>
+
+	</StackPanel>
+</Panel>
+

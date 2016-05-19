@@ -1,0 +1,6 @@
+<DockPanel>
+
+	<StatusBarBackground Dock="Top"/>
+	<Button Text="Mybutton"/>
+
+</DockPanel>

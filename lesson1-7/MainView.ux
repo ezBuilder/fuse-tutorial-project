@@ -1,98 +1,25 @@
 <App Theme="Basic" >
 
-
 <!-- 3 layout1 -->
-	<!-- <Rectangle Fill="#000" Alignment="TopLeft" Margin="20" Width="100" Height="100"/> -->
-	<!-- <Button Width="100" Height="100"/> -->
-<!-- 	<StackPanel Alignment="VerticalCenter" Margin="40,0,40,0">
-		<Button Text="a" Padding="30"/>
-		<Button Text="b" />
-		<Button Text="a" Width="100px" Height="100%" Alignment="Right"/>
-
-	</StackPanel> -->
-
+<ux:Include File="layout1.ux" />
 
 
 <!--4  layout2 -->
-<!-- 	<StackPanel Alignment="VerticalCenter" Margin="40,0,40,0">
-		<TextInput Value="UserName" />
-		<TextInput IsPassword="true" />
-		<Button Text="Submit" Alignment="Center" Margin="0, 20, 0, 0" Padding="40,20,40,20"></Button>
-	</StackPanel> -->
+<ux:Include File="layout2.ux" />
 
 
 
 <!-- 5 statusbar -->
-<!-- <DockPanel>
-
-	<StatusBarBackground Dock="Top"/>
-	<Button Text="Mybutton"/>
-
-</DockPanel> -->
+<ux:Include File="dockNStatusBar.ux" />
 
 <!-- 6 trigger and animation -->
-<!-- <DockPanel>
-
-	<StatusBarBackground Dock="Top"/>
-
-	<StackPanel Orientation="Horizontal" Alignment="Center">
-		
-		<Rectangle  Width="100" Height="100" Fill="#000" CornerRadius="10">
-			<WhileHovering>
-				<Scale Target="GrayRectangle" Factor="1.5" Duration=".25" Easing="BounceOut"
-					EasingBack="BounceIn" DurationBack="1"
-					/> 
-				<Rotate Degrees="45" Duration=".2"/>
-				<Move X="50" Y="-20" />
-			</WhileHovering>
-		</Rectangle>
-
-		<Rectangle ux:Name="GrayRectangle" Width="100" Height="100" Fill="#ccc" 
-			CornerRadius="10" Margin="10,0,0,0">
-
-
-		</Rectangle>
-	</StackPanel>
-</DockPanel> --> 
+<ux:Include File="triggerNAnimation.ux" />
 
 
 <!-- lesson 7 img-->
 <!-- uniform uniformtoFill fill pixel/point precise for stretch mode -->
-<!-- <DockPanel>
-	<StatusBarBackground Dock="Top"/>
-	<StatusBarBackground Dock="Bottom"/>
 
-	
-	<Image Url="https://docs.unity3d.com/uploads/Main/PlayerSetiOSSplash.png"/>
-	<Image File="Assets/tv.png"  StretchMode="Uniform" ContentAlignment="Left"/>
-	 
-
-	<Image>
-
-		<FileImageSource File="Assets/tv.png" />
-	</Image> 
-
-	 <FileImageSource File="Assets/tv.png" ux:Global="testPattern"/>
-	 <StackPanel>
-	 	<Image Source="testPattern"/>
-		<Image Source="testPattern"/>
-
-	 </StackPanel >
-
-
-
-	 <Image Width="256" Height="128">
-	 	<MultiDensityImageSource>
-	 		<FileImageSource File="Assets/tv.png" Density="1"/>
-	 		<FileImageSource File="Assets/tv.png"  Density="2"/>
-	 	</MultiDensityImageSource>
-
-
-	 </Image>
-
-	<Button/>
-</DockPanel> -->
-
+<ux:Include File="img.ux" />
 
 
 
