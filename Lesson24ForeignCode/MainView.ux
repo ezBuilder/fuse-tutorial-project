@@ -1,0 +1,40 @@
+<App Theme="Basic">
+<!-- lesson 15 native api uno -->
+
+
+	<DockPanel>
+
+		<StatusBarBackground	Dock="Top"/>
+		<BottomBarBackground	Dock="Bottom"/>
+
+		<SystemSounds ux:Global="SystemSounds" />
+
+		<JavaScript	>
+			var SystemSounds=require("SystemSounds");
+
+			function button_pressed(){
+				SystemSounds.playNotification();
+
+
+			}
+
+			module.exports={
+
+				button_pressed:button_pressed
+			};
+
+		</JavaScript>
+
+
+
+		<StackPanel>
+
+			<Button Text="Play Audio" Clicked="{button_pressed}" />
+		</StackPanel>
+
+	</DockPanel>
+
+
+
+</App>
+
