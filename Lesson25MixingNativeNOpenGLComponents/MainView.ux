@@ -1,0 +1,44 @@
+<App Theme="Native">
+
+	<JavaScript>
+	// Webview
+	//Native View Host  <NativeViewHost> put native view here with basic theme
+	//graphicsview to include basic theme in native theme and do not forget `<Fuse.BasicTheme.BasicStyle />`
+
+
+	</JavaScript>
+
+	
+		<DockPanel >
+			<StatusBarBackground Dock="Top" />
+			<BottomBarBackground Dock="Bottom" />
+
+
+
+
+			<StackPanel Dock="Top" Margin="20">
+				<Button Text="this is a button" />
+				<Slider />
+				<Switch />
+
+
+				<GraphicsView>
+					<Fuse.BasicTheme.BasicStyle />
+
+					<Button Text="graphic view button" />
+				</GraphicsView>
+				<Button Text="native theme button" />
+			</StackPanel>
+
+
+			
+			<WebView Url="https://tim.bai.uno" />
+
+
+	
+
+
+		</DockPanel>
+
+</App>
+
