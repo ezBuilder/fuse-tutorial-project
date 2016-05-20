@@ -12,9 +12,7 @@
 		<!-- <ux:Include File="jsClickToLoadHtml.ux" /> -->
 		<!-- <ux:Include File="jsClickToLoadHtmlExample.ux" /> -->
 
-		<NativeViewHost>
-    <MapView/>
-</NativeViewHost>
+
 	</DockPanel>
 </App>
 
