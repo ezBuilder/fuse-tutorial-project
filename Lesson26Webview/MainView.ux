@@ -10,8 +10,11 @@
 		<!-- <ux:Include File="html.ux" /> -->
 		<!-- <ux:Include File="jsClickToShowHtml.ux" /> -->
 		<!-- <ux:Include File="jsClickToLoadHtml.ux" /> -->
-		<ux:Include File="jsClickToLoadHtmlExample.ux" />
+		<!-- <ux:Include File="jsClickToLoadHtmlExample.ux" /> -->
 
+		<NativeViewHost>
+    <MapView/>
+</NativeViewHost>
 	</DockPanel>
 </App>
 
