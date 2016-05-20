@@ -1,0 +1,68 @@
+<DockPanel>
+
+	<JavaScript>
+		function onPageLoaded( res){
+			console.log("page has been loaded on" + 
+				JSON.parse(res.string).url);
+		}
+
+		function loadHtml(){
+
+			webView.loadHtml("<h1>from js to load html </h1>");
+		}
+
+		function gotoUrl(){
+
+			webView.goto("https://tim.bai.uno");
+			console.log("go to url");
+
+		}
+
+
+
+		module.exports={
+			
+			loadHtml:loadHtml,
+			gotoUrl:gotoUrl,
+			onPageLoaded:onPageLoaded,
+			
+		};
+
+	</JavaScript>
+
+
+
+	
+	<Button Dock="Bottom" Text="LoadHtml"  Clicked="{loadHtml}">
+
+	</Button>
+
+	<Button Dock="Bottom" Text="gotoUrl"  Clicked="{gotoUrl}">
+
+	</Button>
+
+	
+
+	<NativeViewHost>
+			
+
+		<WebView ux:Name="webView" >
+			<PageLoaded>
+				<!-- <DebugAction Message="page loaded" /> -->
+
+				<EvaluateJS Handler="{onPageLoaded}">
+                        var result = {
+                            url : document.location.href
+                        };
+                        return result;
+				</EvaluateJS>
+
+			</PageLoaded>
+		</WebView>
+
+			
+		
+
+	</NativeViewHost>
+
+</DockPanel>

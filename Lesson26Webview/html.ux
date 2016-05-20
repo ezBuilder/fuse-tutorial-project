@@ -1,0 +1,15 @@
+		<NativeViewHost>
+			
+
+			<WebView  >
+				<HTML>
+					<![CDATA[
+						<h1> hi this is a h1 in html and cdata tag </h1>
+						<p> paragraph </p>
+					]]>
+
+				</HTML>
+			
+			</WebView>
+
+		</NativeViewHost>

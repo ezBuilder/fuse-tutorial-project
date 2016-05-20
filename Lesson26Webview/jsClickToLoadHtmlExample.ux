@@ -1,0 +1,39 @@
+
+<DockPanel>
+    <JavaScript>
+            //at   https://www.fusetools.com/learn/fuse#webview
+
+         function gotoUrl(){
+             webView.goto("https://tim.bai.uno");
+             console.log("goto");
+
+        }
+
+         module.exports = {
+            onPageLoaded : function(res) {
+                 console.log("WebView arrived at "+ JSON.parse(res.json).url);
+            },
+            gotoUrl:gotoUrl
+        };
+    </JavaScript>
+
+        <StatusBarBackground Dock="Top"/>
+
+
+        <Button Text ="load url" Clicked="{gotoUrl}" Dock="Bottom"/>
+
+        <NativeViewHost>
+            <WebView Dock="Fill" ux:Name="webView">
+                <PageLoaded>
+                    <EvaluateJS Handler="{onPageLoaded}">
+                        var result = {
+                            url : document.location.href
+                        };
+                        return result;
+                    </EvaluateJS>
+                </PageLoaded>
+            </WebView>
+        </NativeViewHost>
+
+        <BottomBarBackground Dock="Bottom" />
+</DockPanel>

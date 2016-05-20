@@ -1,0 +1,30 @@
+<DockPanel>
+
+			<JavaScript>
+		module.exports={
+			html : "<h1>a text as a html to show on webview</h1>"
+		};
+
+	</JavaScript>
+
+
+	<Button Dock="Bottom" Text="LoadHtml" >
+
+		<Clicked>
+			<LoadHtml TargetNode="webView" Source="{html}"/>   
+
+			 <!-- //html source and source is different -->
+		</Clicked>
+	</Button>
+
+	<NativeViewHost>
+			
+
+		<WebView ux:Name="webView"  />
+
+			
+		
+
+	</NativeViewHost>
+
+	</DockPanel>

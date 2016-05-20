@@ -1,0 +1,17 @@
+<App Theme="Basic">
+
+	<DockPanel>
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+
+		
+
+		<!-- <ux:Include File="url.ux" /> -->
+		<!-- <ux:Include File="html.ux" /> -->
+		<!-- <ux:Include File="jsClickToShowHtml.ux" /> -->
+		<!-- <ux:Include File="jsClickToLoadHtml.ux" /> -->
+		<ux:Include File="jsClickToLoadHtmlExample.ux" />
+
+	</DockPanel>
+</App>
+
