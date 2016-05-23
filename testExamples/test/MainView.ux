@@ -1,0 +1,9 @@
+<App Theme="Basic">
+<WrapPanel FlowDirection="RightToLeft">
+    <Each Count="10">
+        <Rectangle Margin="5" Width="100" Height="100" Color="Blue"/>
+    </Each>
+</WrapPanel>
+
+</App>
+
