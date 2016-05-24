@@ -1,75 +1,42 @@
 <App Theme="Basic">
 	<JavaScript>
-
+	var Observable = require('FuseJS/Observable');
 	var list_items = [
-
-		{'id': 1, 'title': 'I like'},
-
+		{'id': 1, 'title': Observable('I like')},
 		{'id': 2, 'title': 'big buttons'},
-
 		{'id': 3, 'title': 'and I'},
-
 		{'id': 4, 'title': 'cannot'},
-
 		{'id': 5, 'title': 'lie'}
-
 	];
 
-​
+	var xxx = Observable();
+	xxx.replaceAll(list_items);
 
 	function clicked(args) {
-
 		console.log(JSON.stringify(args));
-
 	};
-
-​
 
 	module.exports = {
-
-		'list_items': list_items,
-
-		'clicked': clicked
-
+		'the_function': clicked,
+		'xxx': xxx
 	};
-
 	</JavaScript>
-
 	<ClientPanel Background="#333">
-
 		<StackPanel ItemSpacing="1">
-
-			<Each Items="{list_items}">
-
+			<Each Items="{xxx}">
 				<Panel ux:Name="ListItem" Height="60" Background="#eee" HitTestMode="LocalBoundsAndChildren">
-
 					<Text Value="{title}" Alignment="Center" />
-
 					<Clicked>
-
-						<Callback Handler="{clicked}" />
-
+						<Callback Handler="{the_function}" />
 					</Clicked>
-
 				</Panel>
-
 			</Each>
-
 			<Panel ux:Name="BigButton" Height="60" Background="#fff" Margin="10" HitTestMode="LocalBoundsAndChildren">
-
 				<Text Value="Standalone button" Alignment="Center" />
-
 				<Clicked>
-
-					<Callback Handler="{clicked}" />
-
+					<Callback Handler="{the_function}" />
 				</Clicked>
-
 			</Panel>
-
 		</StackPanel>
-
 	</ClientPanel>
-
 </App>
-
