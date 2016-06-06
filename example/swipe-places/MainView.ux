@@ -140,7 +140,7 @@
 						<Scale Factor="1.1" Duration="0.5" Easing="BackOut" />
 						<Change shadow.Distance="20" Duration="0.5" Easing="BackOut" />
 						<Change shadow.Size="20" Duration="0.5" Easing="BackOut" />
-					</WhileDragging>
+					</WhileDragging> 
 
 				</Panel>
 			</Each>
@@ -162,3 +162,4 @@
 
 	</Panel>
 </App>
+ 

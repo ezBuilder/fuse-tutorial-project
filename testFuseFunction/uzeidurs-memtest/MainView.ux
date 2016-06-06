@@ -1,0 +1,47 @@
+<App Theme="Basic">
+	<JavaScript>
+	var Observable=require("FuseJS/Observable");
+
+	var list_items = [
+		{'id': 1, 'title': 'I like'},
+		{'id': 2, 'title': 'big buttons'},
+		{'id': 3, 'title': 'and I'},
+		{'id': 4, 'title': 'cannot'},
+		{'id': 5, 'title': 'lie'}
+	];
+
+	var xxx="12";
+
+	var yyy=Observable("14");
+
+
+	function clicked(args) {
+		console.log(JSON.stringify(args));
+	};
+
+	module.exports = {
+		'list_items': list_items,
+		xxx:xxx,
+		'yyy':yyy,
+		'clicked': clicked
+	};
+	</JavaScript>
+	<ClientPanel Background="#333">
+		<StackPanel ItemSpacing="1">
+			<Each Items="{list_items}">
+				<Panel ux:Name="ListItem" Height="60" Background="#eee" HitTestMode="LocalBoundsAndChildren">
+					<Text Value="{title}" Alignment="Center" />
+					<Clicked>
+						<Callback Handler="{clicked}" />
+					</Clicked>
+				</Panel>
+			</Each>
+			<Panel ux:Name="BigButton" Height="60" Background="#fff" Margin="10" HitTestMode="LocalBoundsAndChildren">
+				<Text Value="Standalone button" Alignment="Center" />
+				<Clicked>
+					<Callback Handler="{clicked}" />
+				</Clicked>
+			</Panel>
+		</StackPanel>
+	</ClientPanel>
+</App>
