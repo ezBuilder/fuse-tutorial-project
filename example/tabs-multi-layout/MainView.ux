@@ -1,0 +1,68 @@
+<App Theme="Basic" Background="#eee">
+	<DockPanel>
+		<Panel ux:Class="Tab" ux:Name="self" ClipToBounds="false" Margin="0,0,0,4" Background="#bdc3c7">
+			<string ux:Property="Text" />
+			<Text Value="{Property self.Text}" TextColor="#FFF" Font="RobotoMedium" Alignment="Center" />
+		</Panel>
+
+		<StackPanel Dock="Top" Background="#bdc3c7">
+			<StatusBarBackground />
+			<iOS.StatusBarConfig Style="Light"/>
+			<MultiLayoutPanel Height="50" ux:Name="tabBar">
+				<GridLayout ColumnCount="3" Rows="1*"/>
+				<Panel ux:Name="page1Tab">
+					<Placeholder>
+						<Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Fill="#6c7a89">
+							<LayoutAnimation>
+								<Move RelativeTo="LayoutChange" X="1" Duration="0.4" Easing="BackIn"/>
+							</LayoutAnimation>
+						</Rectangle>
+					</Placeholder>
+					<Tab Text="Page 1">
+						<Clicked>
+							<Set navigation.Active="page1" />
+						</Clicked>
+					</Tab>
+				</Panel>
+				<Panel ux:Name="page2Tab">
+					<Placeholder  Target="indicator"/>
+					<Tab Text="Page 2">
+						<Clicked>
+							<Set navigation.Active="page2" />
+						</Clicked>
+					</Tab>
+				</Panel>
+				<Panel ux:Name="page3Tab">
+					<Placeholder Target="indicator"/>
+					<Tab Text="Page 3">
+						<Clicked>
+							<Set navigation.Active="page3" />
+						</Clicked>
+					</Tab>
+				</Panel>
+			</MultiLayoutPanel>
+		</StackPanel>
+
+		<PageControl ux:Name="navigation">
+			<Text ux:Class="WelcomeText" FontSize="30" Alignment="Center"/>
+			<Page ux:Name="page1" Background="#eee">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="page1Tab" />
+				</WhileActive>
+				<WelcomeText>Welcome to Page 1</WelcomeText>
+			</Page>
+			<Page ux:Name="page2" Background="#abb7b7">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="page2Tab" />
+				</WhileActive>
+				<WelcomeText>Welcome to Page 2</WelcomeText>
+			</Page>
+			<Page ux:Name="page3" Background="#f2f1ef">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="page3Tab" />
+				</WhileActive>
+				<WelcomeText>Welcome to Page 3</WelcomeText>
+			</Page>
+		</PageControl>
+	</DockPanel>
+</App>

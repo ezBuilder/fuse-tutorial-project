@@ -1,0 +1,61 @@
+<App Background="#333">
+	<DockPanel>
+		<iOS.StatusBarConfig Style="Light" />
+		<StatusBarBackground Dock="Top"/>
+		<BottomBarBackground Dock="Bottom"/>
+		<PageControl ux:Name="pages">
+			<Page ux:Name="page1" Background="#34495e">
+				<Image File="Assets/fuse-logo.png" StretchDirection="DownOnly" />
+				<ActivatingAnimation>
+					<Scale Target="tabBarImage1" Factor="1.5" />
+				</ActivatingAnimation>
+			</Page>
+			<Page ux:Name="page2" Background="#3498db">
+				<Image File="Assets/fuse-logo.png" StretchDirection="DownOnly" />
+				<ActivatingAnimation>
+					<Scale Target="tabBarImage2" Factor="1.5" />
+				</ActivatingAnimation>
+			</Page>
+			<Page ux:Name="page3" Background="#aa3377">
+				<Image File="Assets/fuse-logo.png" StretchDirection="DownOnly" />
+				<ActivatingAnimation>
+					<Scale Target="tabBarImage3" Factor="1.5" />
+				</ActivatingAnimation>
+			</Page>
+			<Page ux:Name="page4" Background="#88cc22">
+				<Image File="Assets/fuse-logo.png" StretchDirection="DownOnly" />
+				<ActivatingAnimation>
+					<Scale Target="tabBarImage4" Factor="1.5" />
+				</ActivatingAnimation>
+			</Page>
+		</PageControl>
+
+		<Grid ColumnData="1*,1*,1*,1*" Height="45" Dock="Bottom">
+			<Image ux:Class="Icon" Margin="10" />
+			<Panel Background="#34495e">
+				<Icon ux:Name="tabBarImage1" File="Assets/icon-hexagon.png" />
+				<Clicked>
+					<Set pages.Active="page1" />
+				</Clicked>
+			</Panel>
+			<Panel Background="#3498db">
+				<Icon ux:Name="tabBarImage2" File="Assets/icon-star.png" />
+				<Clicked>
+					<Set pages.Active="page2" />
+				</Clicked>
+			</Panel>
+			<Panel Background="#aa3377">
+				<Icon ux:Name="tabBarImage3" File="Assets/icon-square.png" />
+				<Clicked>
+					<Set pages.Active="page3" />
+				</Clicked>
+			</Panel>
+			<Panel Background="#88cc22">
+				<Icon ux:Name="tabBarImage4" File="Assets/icon-triangle.png" />
+				<Clicked>
+					<Set pages.Active="page4" />
+				</Clicked>
+			</Panel>
+		</Grid>
+	</DockPanel>
+</App>

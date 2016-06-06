@@ -1,0 +1,29 @@
+{
+	"Packages": [
+		"Fuse.Animations",
+		"Fuse.BasicTheme",
+		"Fuse.Controls",
+		"Fuse.Designer",
+		"Fuse.Drawing",
+		"Fuse.Drawing.Primitives",
+		"Fuse.Effects",
+		"Fuse.Elements",
+		"Fuse.Entities",
+		"Fuse.Gestures",
+		"Fuse.Navigation",
+		"Fuse.Reactive",
+		"Fuse.Shapes",
+		"Fuse.Triggers",
+		"FuseCore",
+		"Fuse.Android",
+		"Fuse.iOS",
+		"Fuse.Desktop",
+		"Uno.Collections",
+		"Uno.Geometry"
+	],
+	"Includes": [
+		"Assets/Roboto-Regular.ttf:File",
+		"MainView.js:File",
+		"MainView.ux:UXFile",
+	]
+}
